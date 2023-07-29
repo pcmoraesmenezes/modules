@@ -1,0 +1,233 @@
+É possível decidir o que será importado ou não entre os modulos usando o if __name__ == '__main__'
+
+# Criando datas com módulo datetime
+# datetime(ano, mês, dia)
+# datetime(ano, mês, dia, horas, minutos, segundos)
+# datetime.strptime('DATA', 'FORMATO')
+# datetime.now()
+# https://pt.wikipedia.org/wiki/Era_Unix
+# datetime.fromtimestamp(Unix Timestamp)
+# https://docs.python.org/3/library/datetime.html
+# Para timezones
+# https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+# Instalando o pytz
+# pip install pytz types-pytz
+
+# Usando calendar para calendários e datas
+# https://docs.python.org/3/library/calendar.html
+# calendar é usado para coisas genéricas de calendários e datas.
+# Com calendar, você pode saber coisas como:
+# - Qual o último dia do mês (ex.: monthrange)
+# - Qual o nome e número do dia de determinada data (ex.: weekday)
+# - Criar um calendário em si (ex.: monthcalendar)
+# - Trabalhar com coisas específicas de calendários (ex.: calendar, month)
+# Por padrão dia da semana começa em 0 até 6
+# 0 = segunda-feira | 6 = domingo
+
+# O módulo os para interação com o sistema
+# Doc: https://docs.python.org/3/library/os.html
+# O módulo `os` fornece funções para interagir com o sistema operacional.
+# Por exemplo, o módulo os.path contém funções para trabalhar com caminhos de
+# arquivos e a função os.listdir() pode ser usada para listar os arquivos em um
+# diretório. O método os.system() permite executar comandos do sistema
+# operacional a partir do seu código Python.
+# Windows 11 (PowerShell), Linux, Mac = clear
+# Windows (antigo, cmd) = cls
+# os.path trabalha com caminhos em Windows, Linux e Mac
+# Doc: https://docs.python.org/3/library/os.path.html#module-os.path
+# os.path é um módulo que fornece funções para trabalhar com caminhos de
+# arquivos em Windows, Mac ou Linux sem precisar se preocupar com as diferenças
+# entre esses sistemas.
+# Exemplos do os.path:
+# os.path.join: junta strings em um único caminho. Desse modo,
+# os.path.join('pasta1', 'pasta2', 'arquivo.txt') retornaria
+# 'pasta1/pasta2/arquivo.txt' no Linux ou Mac, e
+# 'pasta1\pasta2\arquivo.txt' no Windows.
+# os.path.split: divide um caminho uma tupla (diretório, arquivo).
+# Por exemplo, os.path.split('/home/user/arquivo.txt')
+# retornaria ('/home/user', 'arquivo.txt').
+# os.path.exists: verifica se um caminho especificado existe.
+# os.path só trabalha com caminhos de arquivos e não faz nenhuma
+# operação de entrada/saída (I/O) com arquivos em si.
+
+# O que é JSON - JavaScript Object Notation
+# JSON - JavaScript Object Notation (extensão .json)
+# É uma estrutura de dados que permite a serialização
+# de objetos em texto simples para facilitar a transmissão de
+# dados através da rede, APIs web ou outros meios de comunicação.
+# O JSON suporta os seguintes tipos de dados:
+# Números: podem ser inteiros ou com ponto flutuante, como 42 ou 3.14
+# Strings: são cadeias de caracteres, como "Olá, mundo!" ou "12345"
+#   As strings devem ser envolvidas por aspas duplas
+# Booleanos: são os valores verdadeiro (true) ou falso (false)
+# Arrays: são listas ordenadas de valores, como [1, 2, 3] ou
+#   ["Oi", "Olá", "Bom dia"]
+# Objetos: são conjuntos de pares chave/valor -> {"nome": "João", "idade": 30}
+# null: é um valor especial que representa ausência de valor
+#
+# Ao converter de Python para JSON:
+# Python        JSON
+# dict          object
+# list, tuple   array
+# str           string
+# int, float    number
+# True          true
+# False         false
+# None          null
+
+# CSV (Comma Separated Values - Valores separados por vírgulas)
+# É um formato de arquivo que armazena dados em forma de tabela, onde cada
+# linha representa uma linha da tabela e as colunas são separadas por vírgulas.
+# Ele é amplamente utilizado para transferir dados entre sistemas de diferentes
+# plataformas, como por exemplo, para importar ou exportar dados para uma
+# planilha (Google Sheets, Excel, LibreOffice Calc) ou para uma base de dados.
+# Um arquivo CSV geralmente tem a extensão ".csv" e pode ser aberto em um
+# editor de texto ou em uma planilha eletrônica.
+# Um exemplo de um arquivo CSV pode ser:
+# Nome,Idade,Endereço
+# Luiz Otávio,32,"Av Brasil, 21, Centro"
+# João da Silva,55,"Rua 22, 44, Nova Era"
+# A primeira linha do arquivo define os nomes das colunas da, enquanto as
+# linhas seguintes contêm os valores das linhas, separados por vírgulas.
+# Regras simples do CSV
+# 1 - Separe os valores das colunas com um delimitador único (,)
+# 2 - Cada registro deve estar em uma linha
+# 3 - Não deixar linhas ou espaços sobrando
+# 4 - Use o caractere de escape (") quando o delimitador aparecer no valor.
+
+# random tem geradores de números pseudoaleatórios
+# Obs.: números pseudoaleatórios significa que os números
+# parecem ser aleatórios, mas na verdade não são. Portanto,
+# este módulo não deve ser usado para segurança ou uso criptográfico.
+# O motivo disso é que quando temos uma mesma entrada e um mesmo algorítimo,
+# a saída pode ser previsível.
+# doc: https://docs.python.org/pt-br/3/library/random.html
+
+# string.Template para substituir variáveis em textos
+# doc: https://docs.python.org/3/library/string.html#template-strings
+# Métodos:
+# substitute: substitui mas gera erros se faltar chaves
+# safe_substitute: substitui sem gerar erros
+# Você também pode trocar o delimitador e outras coisas criando uma subclasse
+# de template.
+
+# Variáveis de ambiente com Python
+# Para variáveis de ambiente
+# Windows PS: $env:VARIAVEL="VALOR" | dir env:
+# Linux e Mac: export NOME_VARIAVEL="VALOR" | echo $VARIAVEL
+# Para obter o valor das variáveis de ambiente
+# os.getenv ou os.environ['VARIAVEL']
+# Para configurar variáveis de ambiente
+# os.environ['VARIAVEL'] = 'valor'
+# Ou usando python-dotenv e o arquivo .env
+# pip install python-dotenv
+# from dotenv import load_dotenv
+# load_dotenv()
+# https://pypi.org/project/python-dotenv/
+# OBS.: sempre lembre-se de criar um .env-example
+
+python-dotenv é uma biblioteca Python que permite que você faça uso de arquivos de configuração para armazenar e acessar as suas variáveis de ambiente de forma mais fácil e segura em seus projetos.
+
+As variáveis de ambiente são valores que podem ser usados em seu código e que podem variar dependendo do ambiente em que o seu código está sendo executado (por exemplo, o ambiente de produção ou o ambiente de desenvolvimento).
+
+Para utilizar o python-dotenv, basta instalá-lo com o pip e, em seguida, adicionar um arquivo chamado .env na raiz do seu projeto.
+
+# Ative seu ambiente virtual
+pip install python-dotenv
+Esse arquivo deve conter as suas variáveis de ambiente e seguir o seguinte formato:
+
+# .env
+VARIAVEL_DE_AMBIENTE_1=valor
+VARIAVEL_DE_AMBIENTE_2=valor
+VARIAVEL_DE_AMBIENTE_3=valor
+Em seu código, você pode acessar essas variáveis usando o módulo os e a função os.getenv(), por exemplo:
+
+import os
+ 
+valor_da_variavel_1 = os.getenv("VARIAVEL_DE_AMBIENTE_1")
+O python-dotenv funciona lendo o arquivo .env e adicionando as variáveis de ambiente ao ambiente do sistema operacional, de forma que elas fiquem disponíveis para seu código usando a função os.getenv().
+
+Isso é útil, por exemplo, para não expor senhas ou outras informações confidenciais em seu código ou em repositórios de código compartilhados, pois o arquivo .env pode ser adicionado ao .gitignore para não ser incluído nos commits. Crie um .env-example para exemplificar como usar o seu programa com valores fictícios.
+
+Além disso, o python-dotenv também permite que você use um arquivo .env para armazenar valores de configuração específicos de cada ambiente, o que pode ser útil quando você estiver trabalhando em um projeto com diferentes ambientes de desenvolvimento, teste e produção.
+
+Doc: https://pypi.org/project/python-dotenv/
+
+# argparse.ArgumentParser para argumentos mais complexos
+# Tutorial Oficial:
+# https://docs.python.org/pt-br/3/howto/argparse.html
+
+# (Parte 1) Básico do protocolo HTTP (HyperText Transfer Protocol)
+# HTTP (HyperText Transfer Protocol) é um protocolo usado enviar e receber
+# dados na Internet. Ele funciona no modo cliente/servidor, onde o cliente
+# (seu navegador, por exemplo) faz uma requisição ao servidor
+# (site, por exemplo), que responde com os dados adequados.
+#
+# A mensagem de requisição do cliente deve incluir dados como:
+# - O método HTTP
+#     - leitura (safe) - GET, HEAD (cabeçalhos), OPTIONS (métodos suportados)
+#     - escrita - POST, PUT (substitui), PATCH (atualiza), DELETE
+# - O endereço do recurso a ser acessado (/users/)
+# - Os cabeçalhos HTTP (Content-Type, Authorization)
+# - O Corpo da mensagem (caso necessário, de acordo com o método HTTP)
+#
+# A mensagem de resposta do servidor deve incluir dados como:
+# - código de status HTTP (200 success, 404 Not found, 301 Moved Permanently)
+# https://developer.mozilla.org/en-US/docs/Web/HTTP/Status
+# - Os cabeçalhos HTTP (Content-Type, Accept)
+# - O corpo da mensagem (Pode estar em vazio em alguns casos)
+
+# + Web Scraping com Python usando requests e bs4 BeautifulSoup
+# - Web Scraping é o ato de "raspar a web" buscando informações de forma
+# automatizada, com determinada linguagem de programação, para uso posterior.
+# - O módulo requests consegue carregar dados da Internet para dentro do seu
+# código. Já o bs4.BeautifulSoup é responsável por interpretar os dados HTML
+# em formato de objetos Python para facilitar a vida do desenvolvedor.
+# - Doc: https://www.crummy.com/software/BeautifulSoup/bs4/doc.ptbr/
+# + Instalação
+# - pip install requests types-requests bs4
+
+ Chrome Options
+# https://peter.sh/experiments/chromium-command-line-switches/
+
+# Usando subprocess para executar e comandos externos
+# subprocess é um módulo do Python para executar
+# processos e comandos externos no seu programa.
+# O método mais simples para atingir o objetivo é usando subprocess.run().
+# Argumentos principais de subprocess.run():
+# - stdout, stdin e stderr -> Redirecionam saída, entrada e erros
+# - capture_output -> captura a saída e erro para uso posterior
+# - text -> Se True, entradas e saídas serão tratadas como texto
+# e automaticamente codificadas ou decodificadas com o conjunto
+# de caracteres padrão da plataforma (geralmente UTF-8).
+# - shell -> Se True, terá acesso ao shell do sistema. Ao usar
+# shell (True), recomendo enviar o comando e os argumentos juntos.
+# - executable -> pode ser usado para especificar o caminho
+# do executável que iniciará o subprocesso.
+# Retorno:
+# stdout, stderr, returncode e args
+# Importante: a codificação de caracteres do Windows pode ser
+# diferente. Tente usar cp1252, cp852, cp850 (ou outros). Linux e
+# mac, use utf_8.
+# Comando de exemplo:
+# Windows: ping 127.0.0.1
+# Linux/Mac: ping 127.0.0.1 -c 4
+
+
+pip install notebook
+para abrir o jupyter notebook basta ir no terminal e digitar jupyter notebook
+
+threads:
+
+O método run() é um método especial da classe Thread que você pode sobrescrever na sua classe derivada (no seu caso, a classe MinhaThread). Ao sobrescrever esse método, você define o comportamento que a thread executará quando for iniciada.
+
+Quando você chama o método start() em uma instância da classe Thread, ele inicia a execução da thread em segundo plano, e internamente, a classe Thread chamará o método run() que você sobrescreveu.
+
+# PyPDF2 é uma biblioteca de manipulação de arquivos PDF feita em Python puro,
+# gratuita e de código aberto. Ela é capaz de ler, manipular, escrever e unir
+# dados de arquivos PDF, assim como adicionar anotações, transformar páginas,
+# extrair texto e imagens, manipular metadados, e mais.
+# A documentação contém todas as informações necessárias para usar PyPDF2.
+# Link: https://pypdf2.readthedocs.io/en/3.0.0/
+# Ative seu ambiente virtual
+# pip install pypdf2

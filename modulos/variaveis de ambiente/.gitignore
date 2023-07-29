@@ -1,0 +1,7 @@
+.env
+.venv
+env/
+venv/
+env.bak/
+venv.bak/
+user_info.env

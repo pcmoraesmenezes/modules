@@ -1,0 +1,9 @@
+Prezado(a) $nome,
+
+Informamos que lhe foi avaliado a carta de recomendação para a sua entrada ao time e ficamos muito satisfeitos com o seu desempenho. A data de ínicio é de $data. 
+Gostariamos que você entrasse em contato o mais rápido possível através deste numero: $telefone, o salário será de ${salario}, entretanto pode-se ser 
+discutido.
+
+Atenciosamente, ${empresa}.
+
+Abraços $nome.
