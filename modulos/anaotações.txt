@@ -231,3 +231,19 @@ Quando você chama o método start() em uma instância da classe Thread, ele ini
 # Link: https://pypdf2.readthedocs.io/en/3.0.0/
 # Ative seu ambiente virtual
 # pip install pypdf2
+
+# Deque - Trabalhando com LIFO e FIFO
+# deque - Double-ended queue
+#
+# Lifo  e fifo
+# pilha e fila
+
+# LIFO (Last In First Out)
+# Pilha (stack)
+# Significa que o último item a entrar será o primeiro a sair (list)
+# Artigo:
+# https://www.otaviomiranda.com.br/2020/pilhas-em-python-com-listas-stack/
+# Vídeo:
+# https://youtu.be/svWVHEihyNI
+# Para tirar itens do final: O(1) Tempo constante
+# Para tirar itens do início: O(n) Tempo Linear

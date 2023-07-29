@@ -39,8 +39,13 @@
     "python.linting.mypyEnabled": true,
     "python.testing.unittestEnabled": false,
     "python.testing.pytestEnabled": true,
-    "python.analysis.diagnosticSeverityOverrides": {},
-    // "python.defaultInterpreterPath": "./venv/bin/python",
+    "python.analysis.diagnosticSeverityOverrides": {
+      "reportUnknownMemberType": "none",
+      "reportUnknownArgumentType": "none",
+      "reportUnknownVariableType": "none",
+      "reportUnknownLambdaType": "none",
+      "reportUnknownParameterType": "none"
+    },
     "python.analysis.typeCheckingMode": "basic",
-    "cSpell.enabled": false
-  }
+    "cSpell.enabled": true
+    }
